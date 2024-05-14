@@ -24,7 +24,7 @@ namespace Infastructure.Services
             _context = context;
             _mapper = mapper;
         }
-        public async Task<List<UniversityRankingDataDto>> GetByCountry(string countryName)
+        public async Task<List<UniversityRankingDataDto>> GetByCountry(CountryFilter filter,string countryName)
         {
             try
             {
@@ -39,6 +39,7 @@ namespace Infastructure.Services
 
 
                     List<UniversityRankingDataDto> result = new List<UniversityRankingDataDto>();
+                    query1 = query1.Skip((filter.page - 1) * filter.pageSize).Take(filter.pageSize);
                     var university = await query1.ToListAsync();
                     foreach (var univer in university)
                     {

@@ -25,9 +25,9 @@ namespace WebApi.Controllers
 
         [HttpGet]
         [Route("/api/universities")]
-        public async Task<ActionResult<IEnumerable<University>>> GetUniversitiesByCountry([FromQuery] string country)
+        public async Task<ActionResult<IEnumerable<University>>> GetUniversitiesByCountry([FromQuery] string country, [FromQuery] CountryFilter filter)
         {
-            List<UniversityRankingDataDto> result = await _service.GetByCountry(country);
+            List<UniversityRankingDataDto> result = await _service.GetByCountry(filter,country);
             if (result.Count <= 0)
             {
                 return NotFound();
