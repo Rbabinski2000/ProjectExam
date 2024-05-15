@@ -19,8 +19,8 @@ namespace Infrastracture.Entities
         public int year { get; set; } 
         public int num_students { get; set; }
         public int student_staff_ratio { get; set; }
-        public int pct_international_students { get; set; }
-        public int pct_female_students { get; set; }
+        public int? pct_international_students { get; set; }
+        public int? pct_female_students { get; set; }
 
     }
 }

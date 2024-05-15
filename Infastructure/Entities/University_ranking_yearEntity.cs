@@ -19,6 +19,6 @@ namespace Infrastracture.Entities
         public int ranking_criteria_id { get; set; }
         public Ranking_criteriaEntity ranking_criteria { get; set; }
         public int year { get; set; }
-        public int score { get; set; }
+        public int? score { get; set; }
     }
 }
